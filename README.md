@@ -13,11 +13,11 @@
 
 ## 👤 Integrante
 
-- **[NOME COMPLETO]** · Grupo 28 · [TURMA]
+- **Henrique Abreu** · Grupo 28 (individual) · [TURMA]
 
 ## 🚀 Destaque: Global Solution 2026.2
 
-**[PetPulse · WARNED.](2TIAO/GLOBAL-SOLUTION-2/README.md)**: inteligência geográfica canina passiva para espaços públicos (CitizenTech · ODS 11.7 e 3).
+**[PetPulse · WARNED.](1TIAO/GLOBAL-SOLUTION-2/README.md)**: inteligência geográfica canina passiva para espaços públicos (CitizenTech · ODS 11.7 e 3).
 
 ---
 

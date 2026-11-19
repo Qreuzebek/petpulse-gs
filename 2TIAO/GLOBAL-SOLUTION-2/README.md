@@ -10,114 +10,69 @@
 
 <br>
 
-# PetPulse · WARNED. — Inteligência geográfica canina passiva para espaços públicos
+# Nome do projeto/atividade
 
-## Grupo 28
+## Nome do grupo
 
 ## 👨‍🎓 Integrantes: 
-- <a href="https://github.com/Qreuzebek">[NOME COMPLETO]</a>
+- <a href="Link do perfil no LinkedIn ou GitHub">Nome do integrante 1</a>
+- <a href="Link do perfil no LinkedIn ou GitHub">Nome do integrante 2</a>
+- <a href="Link do perfil no LinkedIn ou GitHub">Nome do integrante 3</a> 
+- <a href="Link do perfil no LinkedIn ou GitHub">Nome do integrante 4</a> 
+- <a href="Link do perfil no LinkedIn ou GitHub">Nome do integrante 5</a>
 
 ## 👩‍🏫 Professores:
 
 ### Tutor(a)
-- <a href="https://www.linkedin.com/">[Nome do Tutor]</a>
+- <a href="Link do perfil no LinkedIn">Nome do Tutor</a>
   
 ### Coordenador(a)
 - <a href="https://www.linkedin.com/in/andregodoichiovato/">André Godoi Chiovato</a>
 
 ## 📜 Descrição
 
-**Global Solution 2026.2 · CitizenTech — tecnologia centrada no cidadão.**
-
-Parques, praças e cachorródromos de São Paulo recebem centenas de cães por dia, mas ninguém sabe **quando** e **onde** esses espaços ficam cheios, quantos trancos fortes acontecem nas guias (risco de queda para tutores, sobretudo idosos e crianças) ou como dimensionar a manutenção. Hoje a informação depende de relatos manuais, raros e subjetivos.
-
-O **PetPulse (WARNED.)** é uma prova de conceito de um "Waze canino passivo":
-
-1. O **CLIP-01 · TAG 3D** (ESP32 + célula de carga HX711 + IMU MPU6050 + barômetro) mede a **força na guia** em kgf/N e a **altura do cão no eixo Z** (`Z_cão = (Elev_sensor − GoogleElev(lat,lng)) × 100`), sem nenhum check-in manual (*geofence zero-click*).
-2. As posições são indexadas em hexágonos **Uber H3 resolução 10** (~15 mil m² por célula) e agrupadas com **DBSCAN** (métrica haversine, ε = 45 m) numa janela deslizante de **15 minutos (TTL)**.
-3. **Privacidade por padrão (LGPD):** só saem do backend clusters com **k ≥ N cães** (k-anonymity, padrão N = 3). Cães isolados e grupos pequenos ficam ocultos; nenhum identificador individual é publicado.
-4. Cada zona recebe o **Índice DBM** (Densidade·Biomecânica·Movimento), uma métrica própria em escala logarítmica de 0 a 100. **Não é o dBm de radiofrequência**: `DBM = 100·log10(1+I)/log10(1+I_ref)`, com `I = n_cães × tração_média(kgf) × amplitude_Z(m)`.
-5. O mapa 3D (Google Maps **WebGLOverlayView** via deck.gl `GoogleMapsOverlay`) mostra hexágonos extrudados pelo DBM, colunas do eixo Z e um painel neutro ("Clima comportamental": régua contínua TRANQUILA ↔ AGITADA, sem rótulos punitivos).
-
-**Público beneficiado:** tutores urbanos (previsibilidade antes do passeio), pedestres e frequentadores dos parques, e **poder público** (dados agregados para dimensionar cachorródromos, horários de limpeza e sinalização).
-**ODS:** 11.7 (espaços públicos seguros, inclusivos e acessíveis) e 3 (saúde e bem-estar: atividade física e prevenção de quedas e mordidas).
-
-> ⚠️ **Regra 8 · transparência:** todos os cães, leituras e cenários (`+12 PETS`, `PICO 18H`, `PUXADA +15KGF`, `SALTO 3D`, perfil `THOR #8695`) são **dados simulados** de demonstração. Os locais e coordenadas são reais. As cotas de terreno são valores de referência, ou vêm da Google Elevation API quando há chave configurada. O firmware foi **compilado** para ESP32, mas não foi testado em hardware físico em campo.
-
-### Integração entre disciplinas
-
-| Disciplina / conteúdo | Onde está no projeto |
-|---|---|
-| Análise exploratória de dados | `src/petpulse/eda.py`, `notebooks/petpulse_eda.ipynb`, gráficos em `docs/img/` |
-| Machine Learning · agrupamento | DBSCAN (scikit-learn, haversine) em `src/petpulse/clustering.py`, com paridade JS em `src/web/petpulse-core.js` |
-| Visualização interativa / espacial | App web com mapa 3D, H3, WebGL (`src/web/`) |
-| Banco de dados relacional | SQLite com 4 tabelas, CHECK constraints e índice H3+ts (`src/petpulse/db.py`) |
-| Sensores, IoT e ESP32 | Firmware CLIP-01 (`src/firmware/clip01/`), simulável no Wokwi |
-| Cibersegurança e privacidade | k-anonymity, TTL de 15 min, chave de API fora do Git, testes de não exposição de IDs |
-| Serviços em nuvem / APIs | Google Maps JS API e Google Elevation API com cache por célula H3 |
-| Programação (fases anteriores) | Python (pipeline, testes pytest) e JavaScript |
+*Descreva aqui seu projeto em detalhes de forma estruturada e organizada*
 
 ## 📁 Estrutura de pastas 
 
-* **`data/`** Base simulada (`telemetria_simulada.csv`, `dogs_simulados.csv`), banco `petpulse.db` (gerado) e resumos da EDA.
-* **`docs/`** PDF de entrega, roteiro do vídeo e imagens (`docs/img/`).
-* **`notebooks/`** `petpulse_eda.ipynb`: análise exploratória e validação do DBSCAN.
-* **`src/petpulse/`** Pacote Python: simulação, física (kgf/N, eixo Z, DBM), elevação com cache H3, DBSCAN + k-anonymity, SQLite e pipeline.
-* **`src/web/`** App web (HTML/CSS/JS): mapa 3D, CLIP-01, painel da zona, replay do dia gerado pelo Python.
-* **`src/firmware/clip01/`** Firmware ESP32 (`.ino`) e `diagram.json` do Wokwi.
-* **`src/tests/`** 20 testes automatizados (pytest). Os testes do núcleo JS ficam em `src/web/test-core.mjs`.
+*‼️ OBSERVAÇÃO DO TUTOR -- favor remover antes de subir o trabalho -- não há a obrigação de usar todas as pasta propostas, use apenas o que fizer SENTIDO para a entrega. Também está permitido criar mais pastas conforme necessidade visando a melhor organização do projeto. ‼️*
+
+Abaixo encontra-se a descrição da organização da raiz do projeto e a finalidade de cada diretório e arquivo:
+
+* **`data/`** Armazena todas as bases de dados utilizadas no projeto, incluindo arquivos estruturados (como CSV, Excel, JSON), bases de dados sintéticas e outros formatos brutos ou processados.
+
+* **`docs/`** Centraliza a documentação técnica e de negócio do projeto.
+
+* **`notebooks/`** Destinado a cadernos interativos (como *Jupyter Notebooks* ou *Google Colab*) utilizados para análise exploratória de dados, experimentação de algoritmos, prototipagem de modelos, etc.
+
+* **`src/`** Contém todo o código-fonte desenvolvido para o projeto. Dependendo do âmbito da atividade, pode incluir arquivos como: scripts (Python, R, JS), ficheiros web (HTML), firmware para hardware (ESP32/Arduino), além de APIs, microsserviços e ficheiros de modelos e inferências.
+
+* **`README.md`** Este ficheiro. Funciona como o guia principal de introdução, configuração e contextualização do projeto.
 
 ## 📎 Links e Observações
 
 ### 🔗 Links do Projeto
 
-* **[Vídeo de entrega no YouTube (não listado)](COLE_AQUI_O_LINK_DO_YOUTUBE)**: demonstração de até 5 minutos.
-* **[Identidade visual (Claude Design)](https://claude.ai/artifact/4LsunYxKxCTDWqB9A5NGGr)**: brand board, HUD, CLIP-01 e capa.
+*Substitua ou duplique a estrutura abaixo para cada link relevante do projeto:*
+
+* **[Nome do Link (ex: Vídeo de Entrega no YouTube)]**(http://url-aqui) - Breve descrição.
 
 ### 🧠 Decisões Técnicas
 
-> **H3 res-10** dá células de ~66 m de aresta, do tamanho de um cachorródromo; é mais fino que um bairro e mais grosso que um GPS individual (ajuda na privacidade).
-> **DBSCAN** dispensa definir o número de grupos e trata isolados como ruído, que é exatamente o que precisamos ocultar. A métrica haversine e o ε em metros evitam distorção de lat/lng.
-> **k-anonymity (min_samples = N)** usa o mesmo parâmetro como regra de clusterização e de privacidade: o slider `DBSCAN ≥ N` muda as duas coisas ao mesmo tempo.
-> **Escala logarítmica (DBM)** evita que um parque lotado sature a régua e esconda diferenças entre zonas médias.
-> **SQLite** porque é relacional, sem servidor e reprodutível pelo avaliador. O esquema está pronto para PostgreSQL/PostGIS.
-> **Google Maps + deck.gl:** com chave, o mapa usa Google Maps vetorial + `GoogleMapsOverlay` (interleaved = WebGLOverlayView) + Elevation API. Sem chave, as **mesmas camadas** rodam em deck.gl standalone (tiles Esri/OSM), para que a demo nunca dependa de cobrança.
-> **Duas implementações do núcleo** (Python e JS) com testes de paridade: o Python gera o histórico e o banco, e o JS roda a simulação ao vivo no navegador.
+*Utilize este espaço para registar as principais escolhas tecnológicas do projeto e as suas justificações (ex: escolha de frameworks, banco de dados, arquitetura, etc.):*
+
+> Escreva aqui as observações e justificações técnicas do projeto...
 
 ### 📢 Observações Gerais
 
-* **Participação na Competição:** [x] Sim, aceitamos participar / [ ] Não vamos participar.
-* *Outras observações:* projeto desenvolvido individualmente (Grupo 28, 1 integrante).
+*Indique obrigatoriamente no campo abaixo a decisão da equipe quanto à participação na competição:*
+
+* **Participação na Competição:** [ ] Sim, aceitamos participar / [ ] Não vamos participar.
+* *Outras observações gerais (opcional):* Escreva aqui...
 
 ## 🔧 Como executar o código
 
-Pré-requisitos: Python 3.11+, Node 18+ (opcional, para os testes JS), navegador moderno. Opcionais: chave Google Maps, arduino-cli/Wokwi.
-
-```bash
-cd 2TIAO/GLOBAL-SOLUTION-2
-python3 -m pip install -r requirements.txt
-
-# 1) gera a base simulada, o banco SQLite e os snapshots do mapa
-cd src && python3 -m petpulse.pipeline
-
-# 2) análise exploratória (gráficos em docs/img, resumo em data/)
-python3 -m petpulse.eda
-
-# 3) testes
-python3 -m pytest -q tests
-node web/test-core.mjs
-
-# 4) app web: abra http://localhost:8000
-python3 -m http.server 8000 --directory web
-```
-
-**Google Maps (opcional):** copie `src/web/config.example.js` para `src/web/config.js` e preencha `googleMapsApiKey` (com Maps JavaScript API e Elevation API ativas) e, se quiser, um `mapId` vetorial. Para o pipeline Python consultar a Elevation API, exporte `GOOGLE_MAPS_API_KEY`. O `config.js` está no `.gitignore`.
-
-**Firmware:** abra `src/firmware/clip01/` no [Wokwi](https://wokwi.com) (ESP32), ou compile com:
-
-```bash
-arduino-cli compile --fqbn esp32:esp32:esp32 src/firmware/clip01
-```
+*Acrescentar as informações necessárias sobre pré-requisitos (IDEs, serviços, bibliotecas etc.) e instalação básica do projeto, descrevendo eventuais versões utilizadas. Colocar um passo a passo de como o leitor pode baixar o seu código e executá-lo a partir de sua máquina ou seu repositório.*
 
 ---
 
