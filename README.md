@@ -13,7 +13,7 @@
 
 ## 👤 Integrante
 
-- **Henrique Abreu** · Grupo 28 (individual) · [TURMA]
+- **Henrique Abreu** · RM 572248 · Tecnologia em Inteligência Artificial (On-line) · Grupo 28 (individual)
 
 ## 🚀 Destaque: Global Solution 2026.2
 
