@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>PetPulse WARNED — Global Solution 2026.2</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+@page{size:A4;margin:18mm 18mm 20mm}
+@page:first{margin:0}
+:root{--ink:#0E0F10;--graf:#2A2C2F;--aco:#6B6F75;--nev:#C9CCD0;--bg:#F4F4F2;--dim:#4A4D52}
+body{font-family:Inter,sans-serif;color:var(--ink);font-size:10.5pt;line-height:1.5;margin:0}
+h1,h2,h3{font-family:'Space Grotesk',sans-serif;letter-spacing:-.02em;line-height:1.15}
+h1{font-size:22pt;margin:0 0 6pt;border-bottom:1.5pt solid var(--ink);padding-bottom:4pt;break-after:avoid}
+h2{font-size:14pt;margin:16pt 0 4pt;break-after:avoid}
+h3{font-size:11.5pt;margin:12pt 0 3pt;break-after:avoid}
+p{margin:0 0 6pt}
+.mono,code,pre{font-family:'JetBrains Mono',monospace}
+code{font-size:9pt;background:#ECEDEE;padding:0 2pt}
+pre{font-size:8pt;line-height:1.4;background:#F1F2F3;border-left:2pt solid var(--ink);padding:6pt 8pt;white-space:pre-wrap;break-inside:avoid;margin:4pt 0 8pt}
+table{border-collapse:collapse;width:100%;font-size:9pt;margin:4pt 0 10pt;break-inside:avoid}
+th,td{border-bottom:.6pt solid var(--nev);padding:3pt 5pt;text-align:left;vertical-align:top}
+th{border-bottom:1pt solid var(--ink);font-family:'JetBrains Mono',monospace;font-size:8pt;letter-spacing:.04em}
+figure{margin:6pt 0 10pt;break-inside:avoid}
+figure img{width:100%;border:.6pt solid var(--nev)}
+figcaption{font-size:8.5pt;color:var(--dim);margin-top:3pt}
+.half{display:grid;grid-template-columns:1fr 1fr;gap:10pt}
+.note{border:1pt solid var(--ink);padding:6pt 9pt;margin:6pt 0 10pt;break-inside:avoid}
+.note b{font-family:'JetBrains Mono',monospace;font-size:8.5pt}
+section{break-before:page}
+.cover{height:297mm;box-sizing:border-box;background:var(--bg);padding:24mm 22mm;display:flex;flex-direction:column;gap:14pt}
+.cover .top{display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:8.5pt;letter-spacing:.12em;color:var(--dim);border-bottom:1pt solid var(--ink);padding-bottom:8pt}
+.cover .t1{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:64pt;letter-spacing:-.04em;line-height:.9;margin-top:60pt}
+.cover .t2{font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:19pt;color:var(--graf);max-width:150mm}
+.cover .who{margin-top:auto;display:grid;grid-template-columns:1fr 1fr;gap:12pt;border-top:1pt solid var(--ink);padding-top:12pt}
+.cover .who span{display:block;font-family:'JetBrains Mono',monospace;font-size:8pt;color:var(--dim)}
+.cover .who b{font-size:12pt}
+.toc li{margin:2pt 0}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="top"><span>FIAP · GRADUAÇÃO ON EM INTELIGÊNCIA ARTIFICIAL</span><span>GLOBAL SOLUTION 2026.2</span></div>
+  <svg width="96" height="96" viewBox="0 0 132 132" style="margin-top:50pt"><polygon points="66,6 118,36 118,96 66,126 14,96 14,36" fill="#0E0F10"/><polyline points="24,70 46,70 54,52 64,90 74,40 82,70 108,70" fill="none" stroke="#F4F4F2" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/></svg>
+  <div class="t1">PetPulse</div>
+  <div class="t2">WARNED. Inteligência geográfica canina passiva para espaços públicos</div>
+  <p style="max-width:140mm;color:#2A2C2F">Desafio CitizenTech: tecnologia centrada no cidadão. ODS 11.7 e ODS 3.</p>
+  <div class="who">
+    <div><span>INTEGRANTE</span><b>[NOME COMPLETO]</b><br><span>RM [RM]</span></div>
+    <div><span>TURMA · GRUPO</span><b>[TURMA] · Grupo 28</b><br><span>Entrega: 19/11/2026</span></div>
+  </div>
+</div>
+
+<section style="break-before:auto">
+<h1>Sumário</h1>
+<ol class="toc">
+  <li>Introdução: problema, público, objetivo</li>
+  <li>Desenvolvimento: ecossistema, arquitetura, dados, tecnologias, códigos principais, privacidade</li>
+  <li>Resultados obtidos: testes, análise exploratória, protótipo e limitações</li>
+  <li>ODS e medição de impacto</li>
+  <li>Conclusões</li>
+  <li>Links da entrega</li>
+</ol>
+<div class="note"><b>TRANSPARÊNCIA (REGRA 8)</b><br>
+Todos os cães, leituras de sensores e cenários de carga mostrados neste documento e no protótipo (<code>+12 PETS</code>, <code>PICO 18H</code>, <code>PUXADA +15KGF</code>, <code>SALTO 3D</code>, perfil <code>THOR #8695</code>) são <b>dados simulados</b> por um gerador com semente fixa. Os locais e coordenadas são reais (São Paulo: Ibirapuera, Vila Nova Conceição e Itaim). As cotas de terreno são valores de referência, ou vêm da Google Elevation API quando há chave. O firmware foi compilado para ESP32, mas <b>não</b> foi testado em hardware físico em campo. Os valores de autonomia (14 µA / 184 dias) são meta de projeto, não medição.</div>
+</section>
+
+<section style="break-before:auto">
+<h1>1. Introdução</h1>
+<h2>1.1 Problema real</h2>
+<p>São Paulo tem uma das maiores populações de cães domiciliados do país, e parques, praças e cachorródromos recebem centenas deles por dia, com concentração no fim da tarde. Três dores aparecem no cotidiano:</p>
+<ul>
+<li><b>Imprevisibilidade.</b> O tutor não sabe se o cachorródromo está lotado antes de sair. Cães reativos, idosos ou filhotes acabam expostos a ambientes agitados.</li>
+<li><b>Segurança.</b> Trancos fortes na guia (acima de 8 kgf; um cão grande ultrapassa 20 kgf) causam quedas de tutores, sobretudo idosos e crianças, e fugas. Esses eventos não são medidos.</li>
+<li><b>Gestão pública às cegas.</b> A prefeitura e as administrações dos parques dimensionam cachorródromos, limpeza, iluminação e sinalização sem dados de uso real por microrregião e horário.</li>
+</ul>
+<p>Os apps atuais dependem de check-ins e relatos manuais, que são raros, atrasados e subjetivos.</p>
+
+<h2>1.2 Público beneficiado</h2>
+<table>
+<tr><th>PÚBLICO</th><th>BENEFÍCIO</th></tr>
+<tr><td>Tutores urbanos (incluindo idosos e pessoas com mobilidade reduzida)</td><td>Leitura objetiva antes do passeio: lotação, tração média e picos por zona e horário.</td></tr>
+<tr><td>Frequentadores dos parques (pedestres, corredores, crianças)</td><td>Menos conflitos e trancos em horários e locais críticos.</td></tr>
+<tr><td>Poder público e gestores de parques</td><td>Mapa agregado e anônimo de uso por hexágono H3 e faixa horária, para dimensionar cachorródromos e manutenção.</td></tr>
+<tr><td>Clínicas veterinárias, adestradores e pet shops</td><td>Dados agregados de porte, intensidade e horários de pico.</td></tr>
+</table>
+
+<h2>1.3 Objetivo</h2>
+<p>Construir uma <b>prova de conceito demonstrável</b> que, sem nenhum check-in manual, transforme sinais físicos de um sensor de coleira (força e altura) em <b>informação agregada, anônima e útil</b> sobre o uso dos espaços públicos, respondendo à pergunta do desafio com IA (agrupamento DBSCAN), dados, IoT e visualização espacial.</p>
+</section>
+
+<section>
+<h1>2. Desenvolvimento</h1>
+<h2>2.1 Atores do ecossistema e ampliação do impacto</h2>
+<table>
+<tr><th>ATOR</th><th>PAPEL</th><th>COMO AMPLIA O IMPACTO</th></tr>
+<tr><td>Tutor + CLIP-01</td><td>Gera telemetria passiva (geofence zero-click)</td><td>Cada novo tutor melhora a densidade e a precisão do mapa (efeito de rede).</td></tr>
+<tr><td>Prefeitura / Secretaria do Verde</td><td>Consome painéis agregados por H3</td><td>Pode replicar o modelo em outros parques e integrar com o portal de dados abertos.</td></tr>
+<tr><td>Administração dos parques</td><td>Ajusta limpeza, iluminação e sinalização</td><td>Usa os picos (por exemplo, às 18h) para alocar equipes.</td></tr>
+<tr><td>Clínicas e ONGs de bem-estar animal</td><td>Campanhas de adestramento "guia frouxa"</td><td>Medem a redução de trancos antes e depois das campanhas.</td></tr>
+<tr><td>Varejo pet (pet hubs)</td><td>Parceiros na distribuição do hardware</td><td>Reduzem o custo de aquisição do CLIP-01 para o tutor.</td></tr>
+</table>
+
+<h2>2.2 Arquitetura da solução</h2>
+<pre style="white-space:pre;font-size:6.4pt">
+ CLIP-01 (ESP32)            Celular do tutor            Backend (Python)                      App web (JS)
+ HX711 força (kgf)   BLE    GPS lat/lng          HTTPS  simulate → SQLite → janela TTL 15m     Google Maps vetorial
+ MPU6050 inclinação  ───▶   + leitura do clip   ───▶    H3 res-10 → DBSCAN (haversine 45 m)   + WebGLOverlayView (deck.gl)
+ Barômetro → Z (cm)         (geofence passivo)          k-anonymity (k ≥ N) → Índice DBM ───▶ hexágonos 3D, eixo Z,
+ Botão LED                                              cache Google Elevation por H3          painel neutro, replay
+</pre>
+<p>Nesta POC, o elo "celular do tutor" é substituído pelo <b>gerador de telemetria simulada</b> (Python e JS), e o firmware roda de forma independente no simulador Wokwi.</p>
+
+<h2>2.3 Dados: origem, tratamento, qualidade e limitações</h2>
+<table>
+<tr><th>DADO</th><th>ORIGEM</th><th>TRATAMENTO</th><th>LIMITAÇÃO</th></tr>
+<tr><td>Zonas e coordenadas</td><td>Reais (6 locais de SP)</td><td>Indexação H3 res-10</td><td>Recorte pequeno (Ibirapuera, Itaim, Vila Nova Conceição)</td></tr>
+<tr><td>Cota do terreno</td><td>Referência compatível com a Google Elevation; a API real é usada se houver chave</td><td>Cache por célula H3 no SQLite e interpolação IDW como fallback</td><td>A resolução da Elevation API é de metros, e o eixo Z depende de diferença em centímetros</td></tr>
+<tr><td>Cães (600)</td><td><b>Simulados</b>: porte, altura, sexo, peso</td><td>Altura de referência por porte (28/46/62/78 cm) ± ruído</td><td>Distribuição de portes estimada, não censitária</td></tr>
+<tr><td>Telemetria (36.038 leituras)</td><td><b>Simulada</b>, a cada 30 s, com picos às 7h e 18h</td><td>Faixas de guia, kgf→N, ruído barométrico de ±5 cm, trancos e saltos eventuais</td><td>Não substitui a calibração com hardware real</td></tr>
+</table>
+<p>Qualidade: 0 valores nulos. As medianas de Z por porte ficaram em 28,1 / 46,5 / 62,4 / 78,3 cm, coerentes com as alturas de referência. O gerador usa semente fixa, então é reprodutível (há teste automatizado para isso).</p>
+
+<h2>2.4 Tecnologias e justificativa</h2>
+<table>
+<tr><th>TECNOLOGIA</th><th>POR QUE</th></tr>
+<tr><td>Python · pandas · scikit-learn</td><td>Linguagem do curso. DBSCAN com métrica haversine e ε em metros.</td></tr>
+<tr><td>Uber H3 res-10</td><td>Células de ~66 m de aresta (tamanho de um cachorródromo); vizinhança uniforme (k-ring); chave de cache.</td></tr>
+<tr><td>SQLite</td><td>Relacional, sem servidor, reprodutível pelo avaliador; CHECK constraints e índice (h3, ts).</td></tr>
+<tr><td>Google Maps JS + WebGLOverlayView (deck.gl GoogleMapsOverlay)</td><td>Mapa 3D vetorial com camadas WebGL intercaladas; Elevation API para a cota.</td></tr>
+<tr><td>deck.gl standalone + tiles Esri/OSM</td><td>Fallback sem chave: as mesmas camadas, para a demo nunca depender de cobrança.</td></tr>
+<tr><td>ESP32 · HX711 · MPU6050 (C++/Arduino)</td><td>Hardware de baixo custo visto no curso; simulável no Wokwi.</td></tr>
+<tr><td>Claude Design</td><td>Identidade visual "VER B · Neutra monocromática" aplicada ao app e a este documento.</td></tr>
+</table>
+
+<h2>2.5 Integração entre disciplinas</h2>
+<table>
+<tr><th>CONTEÚDO</th><th>IMPLEMENTAÇÃO</th></tr>
+<tr><td>Análise exploratória de dados</td><td><code>petpulse/eda.py</code>, <code>notebooks/petpulse_eda.ipynb</code>, 4 gráficos e tabela-resumo</td></tr>
+<tr><td>Machine Learning: agrupamento</td><td>DBSCAN + análise de sensibilidade de ε (notebook)</td></tr>
+<tr><td>Visualização interativa e espacial</td><td>App 3D com H3, eixo Z, replay do dia e controles de simulação</td></tr>
+<tr><td>Banco de dados</td><td>Modelo relacional com 4 tabelas, consultas por janela TTL e cache geoespacial</td></tr>
+<tr><td>Sensores e ESP32</td><td>Firmware CLIP-01 com JSON na Serial (BLE no produto)</td></tr>
+<tr><td>Cibersegurança e LGPD</td><td>k-anonymity, TTL de 15 min, ocultação de isolados, chave fora do Git, testes de não exposição</td></tr>
+<tr><td>Nuvem e APIs</td><td>Google Maps Platform (Maps JS, Elevation) com cache para reduzir custo</td></tr>
+</table>
+</section>
+
+<section>
+<h2>2.6 Códigos principais</h2>
+<h3>Eixo Z e índice DBM (<code>src/petpulse/physics.py</code>)</h3>
+<pre>def z_cao_cm(elev_sensor_m, google_elev_m, offset_montagem_cm=0.0, inclinacao_graus=0.0):
+    """Z_cão = (Elevação_Sensor − GoogleElev(lat,lng)) × 100, em cm."""
+    z = (elev_sensor_m - google_elev_m) * 100.0
+    z = z * math.cos(math.radians(inclinacao_graus)) + offset_montagem_cm
+    return round(z, 1)
+
+def indice_dbm(n_caes, tracao_media_kgf, amplitude_z_cm, ref_max=40 * 18 * 1.0):
+    """Índice DBM (Densidade·Biomecânica·Movimento), 0–100. NÃO é o dBm de RF."""
+    if n_caes &lt;= 0:
+        return 0
+    intensidade = n_caes * max(tracao_media_kgf, 0) * max(amplitude_z_cm, 0) / 100.0
+    valor = 100 * math.log10(1 + intensidade) / math.log10(1 + ref_max)
+    return int(round(min(max(valor, 0), 100)))</pre>
+<p><b>Sobre o nome DBM:</b> em telecom, dBm é decibel-miliwatt, <code>10·log10(P/1 mW)</code>. No PetPulse, DBM é uma <b>métrica própria da POC</b>, inspirada na lógica do decibel: comprime em escala logarítmica a intensidade <i>I = cães × tração × amplitude vertical</i>, para que um parque lotado não sature a régua e esconda diferenças entre zonas médias. Dobrar <i>I</i> não dobra o índice, e há teste automatizado para isso.</p>
+
+<h3>DBSCAN geoespacial + k-anonymity (<code>src/petpulse/clustering.py</code>)</h3>
+<pre>def dbscan(caes, eps_m=DBSCAN_EPS_M, k_min=K_MIN):
+    coords = np.radians(caes[["lat", "lng"]].to_numpy())
+    model = DBSCAN(eps=eps_m / R_TERRA_M, min_samples=k_min,
+                   metric="haversine", algorithm="ball_tree")
+    return model.fit_predict(coords)          # -1 = isolado
+
+def agrega_clusters(caes, rotulos, cota_fn, k_min=K_MIN):
+    caes = caes.assign(cluster=rotulos)
+    ocultos = int((caes["cluster"] == -1).sum())
+    for cid, grupo in caes[caes["cluster"] &gt;= 0].groupby("cluster"):
+        if grupo["dog_id"].nunique() &lt; k_min:   # LGPD OCULTO
+            ocultos += len(grupo); continue
+        ...  # só estatísticas agregadas saem daqui: nunca dog_id</pre>
+
+<h3>Cache de elevação por H3 (<code>src/petpulse/elevation.py</code>)</h3>
+<pre>def cota(conn, lat, lng):
+    cell = h3.latlng_to_cell(lat, lng, H3_RES)
+    row = conn.execute("SELECT elev_m, fonte FROM h3_elevation WHERE h3=?", (cell,)).fetchone()
+    if row:                                   # cache: zero chamadas repetidas
+        return cell, row[0], row[1]
+    key = os.environ.get("GOOGLE_MAPS_API_KEY")
+    elev = _google(*h3.cell_to_latlng(cell), key) if key else None
+    if elev is None:
+        elev, fonte = _interpolada(*h3.cell_to_latlng(cell)), "referencia"
+    conn.execute("INSERT OR REPLACE INTO h3_elevation VALUES (?,?,?)", (cell, elev, fonte))</pre>
+
+<h3>Modelo relacional (<code>src/petpulse/db.py</code>)</h3>
+<pre>dog(dog_id PK, nome, porte CHECK(...), altura_cm, sexo, peso_kg)
+telemetry(id PK, ts, dog_id FK→dog, zona, lat, lng, h3, kgf, newton,
+          faixa CHECK IN ('FROUXA','TRACAO','TRANCO'), elev_sensor_m, z_cm)   INDEX (h3, ts)
+h3_elevation(h3 PK, elev_m, fonte)
+cluster_snapshot(janela_ini, cluster_id, zona, h3, n_caes, tracao_media, pico_kgf,
+                 z_medio_cm, z_min_cm, z_max_cm, cota_m, dbm)   PK (janela_ini, cluster_id)</pre>
+
+<h3>Firmware CLIP-01 (<code>src/firmware/clip01/clip01.ino</code>, trecho)</h3>
+<pre>float kgf = balanca.is_ready() ? fabsf(balanca.get_units(3)) : 0;
+pico = fmaxf(pico * 0.995f, kgf);
+// Z_cão = (Elevação_sensor − GoogleElev(lat,lng)) × 100, projetado na vertical pela IMU
+float z = (lerElevacaoSensor() - GOOGLE_ELEV) * 100.0f * cosf(inclinacaoGraus() * PI / 180.0f);
+Serial.printf("{\"dog\":%d,\"kgf\":%.1f,\"n\":%d,\"faixa\":\"%s\",\"z_cm\":%.1f,...}\n", ...);</pre>
+<p>No Wokwi, um potenciômetro substitui o barômetro (o simulador não tem BMP280). Um filtro exponencial (EMA, α = 0,2) reduz o ruído barométrico.</p>
+
+<h2>2.7 Segurança e privacidade (LGPD)</h2>
+<ul>
+<li><b>Minimização:</b> o mapa público só recebe agregados (contagem, médias, faixas). Nenhum <code>dog_id</code> sai do módulo de clusterização (teste <code>test_cluster_publico_nao_expoe_ids</code>).</li>
+<li><b>k-anonymity:</b> clusters com menos de N cães e cães isolados são ocultados. O slider <code>DBSCAN ≥ N</code> controla clusterização e privacidade ao mesmo tempo.</li>
+<li><b>Janela TTL de 15 min:</b> só a posição recente entra no mapa, o que impede reconstruir trajetos.</li>
+<li><b>Segredos:</b> a chave Google fica em <code>config.js</code>/variável de ambiente, ignorados pelo Git. Recomenda-se restringir a chave por domínio (HTTP referrer).</li>
+<li><b>UX sem julgamento:</b> a régua "clima comportamental" é contínua e neutra, sem rótulos punitivos sobre cães ou tutores.</li>
+</ul>
+</section>
+
+<section>
+<h1>3. Resultados obtidos</h1>
+<h2>3.1 Evidências de testes</h2>
+<pre>$ python -m pytest -v tests
+test_kgf_para_newton_igual_a_ui[3.4-33 | 13.6-133 | 18.3-179]      PASSED x3
+test_faixas_de_guia[1.0 | 2.5 | 8.0 | 8.1]                          PASSED x4
+test_eixo_z_formula                                                PASSED
+test_filtro_barometrico_reduz_ruido                                PASSED
+test_porte_por_altura[27 | 47 | 61 | 80]                            PASSED x4
+test_dbm_logaritmico_monotono_e_limitado                           PASSED
+test_dbscan_agrupa_vizinhos_e_isola_distante                       PASSED
+test_k_anonymity_oculta_isolados_e_grupos_pequenos                 PASSED
+test_cluster_publico_nao_expoe_ids                                 PASSED
+test_cache_h3_de_elevacao                                          PASSED
+test_schema_rejeita_faixa_invalida                                 PASSED
+test_simulacao_reprodutivel_e_com_pico_18h                         PASSED
+======================== 20 passed in 1.95s ========================
+
+$ node src/web/test-core.mjs           # paridade JS ↔ Python (mesmo DBM = 73 para 13 cães/13,6 kgf/70 cm)
+core JS: todos os testes passaram
+
+$ arduino-cli compile --fqbn esp32:esp32:esp32 src/firmware/clip01
+Sketch uses 315604 bytes (24%) of program storage space.
+Global variables use 23804 bytes (7%) of dynamic memory.</pre>
+<p>Testes manuais no navegador: navegação entre zonas, seleção de hexágono, <code>PICO 18H</code>, <code>PUXADA +15KGF</code>, <code>SALTO 3D</code>, modo LED, VER A/B, slider k e replay do dia. Todos funcionaram no motor deck.gl (sem chave). O motor Google foi implementado, mas não foi exercitado nesta entrega por falta de chave de API.</p>
+
+<h2>3.2 Pipeline (base simulada)</h2>
+<p>600 cães · 36.038 leituras · 65 janelas de 15 min (6h–22h) · <b>184 clusters públicos</b> com k ≥ 3. Faixas de guia: 40,6% frouxa, 45,2% tração, 14,2% tranco. Pico de demanda: <b>18h</b>.</p>
+<table>
+<tr><th>ZONA</th><th>JANELAS</th><th>CÃES MÁX</th><th>TRAÇÃO MÉD (kgf)</th><th>PICO (kgf)</th><th>DBM MÁX</th><th>COTA (m)</th></tr>
+<tr><td>Parque Ibirapuera · Portão 7</td><td>45</td><td>29</td><td>4,6</td><td>26,1</td><td>71</td><td>752,1</td></tr>
+<tr><td>Parque do Povo · Setor Sul</td><td>38</td><td>16</td><td>4,2</td><td>29,6</td><td>62</td><td>748,9</td></tr>
+<tr><td>Praça Pereira Coutinho</td><td>34</td><td>16</td><td>4,5</td><td>25,0</td><td>62</td><td>762,6</td></tr>
+<tr><td>Praça Cidade de Milão</td><td>28</td><td>14</td><td>4,9</td><td>34,4</td><td>60</td><td>756,3</td></tr>
+<tr><td>Boulevard Afonso Braz</td><td>23</td><td>11</td><td>4,1</td><td>25,5</td><td>58</td><td>768,4</td></tr>
+<tr><td>Rua Brazópolis · V. N. Conceição</td><td>16</td><td>9</td><td>4,0</td><td>31,9</td><td>50</td><td>763,3</td></tr>
+</table>
+
+<div class="half">
+<figure><img src="img/eda_tracao.png"><figcaption>Fig. 1. Distribuição da tração, com limites de 2,5 e 8 kgf.</figcaption></figure>
+<figure><img src="img/eda_hora.png"><figcaption>Fig. 2. Cães distintos por hora; pico às 18h.</figcaption></figure>
+<figure><img src="img/eda_eixo_z.png"><figcaption>Fig. 3. Altura no eixo Z por porte.</figcaption></figure>
+<figure><img src="img/eda_dbm.png"><figcaption>Fig. 4. Índice DBM por zona ao longo do dia (k ≥ 3).</figcaption></figure>
+</div>
+
+<h3>Sensibilidade do DBSCAN (janela das 18h, 88 cães)</h3>
+<table>
+<tr><th>ε (m)</th><th>CLUSTERS</th><th>ISOLADOS OCULTOS</th><th>LEITURA</th></tr>
+<tr><td>20</td><td>6</td><td>66</td><td>fragmenta demais e oculta 75% dos cães</td></tr>
+<tr><td>30</td><td>7</td><td>49</td><td>ainda oculta mais da metade</td></tr>
+<tr><td><b>45</b></td><td><b>8</b></td><td><b>19</b></td><td><b>escolhido:</b> separa sub-áreas sem fundir parques</td></tr>
+<tr><td>60</td><td>6</td><td>6</td><td>começa a fundir grupos vizinhos</td></tr>
+<tr><td>90</td><td>6</td><td>0</td><td>funde tudo; nenhum isolado fica protegido</td></tr>
+</table>
+</section>
+
+<section>
+<h2>3.3 Protótipo em funcionamento</h2>
+<figure><img src="img/app_ibirapuera_pico.jpg"><figcaption>Fig. 5. Modo ao vivo após PICO 18H e PUXADA +15KGF: Parque Ibirapuera com 51 cães, tração média de 7 kgf, pico de 20 kgf e DBM 86. CLIP-01 do THOR #8695 no canto inferior esquerdo, com a fórmula do eixo Z.</figcaption></figure>
+<div class="half">
+<figure><img src="img/app_replay_python.jpg"><figcaption>Fig. 6. Replay das 18h com os clusters gerados pelo pipeline Python (8 zonas públicas, 19 ocultos).</figcaption></figure>
+<figure><img src="img/app_ver_a.jpg"><figcaption>Fig. 7. Modo VER A · Sinal Bold (alternativo ao padrão monocromático).</figcaption></figure>
+</div>
+
+<h2>3.4 Limitações</h2>
+<ul>
+<li><b>Sem hardware em campo:</b> força, altura e consumo vêm de simulação. O firmware compila, mas não foi calibrado com célula de carga real.</li>
+<li><b>Eixo Z × resolução da elevação:</b> a Elevation API tem precisão de metros, e o barômetro de consumo tem ruído de ±10 cm. Na prática, Z exigiria calibração diferencial: a referência no momento em que o cão está parado, mais um barômetro no celular do tutor.</li>
+<li><b>Dependência de APIs pagas:</b> mitigada por cache H3 e pelo fallback sem chave. O motor Google não foi exercitado nesta entrega.</li>
+<li><b>Efeito de rede:</b> a k-anonymity só libera dados onde há densidade. Em áreas com poucos usuários o mapa fica vazio, o que é intencional, mas reduz a utilidade inicial.</li>
+<li><b>DBM:</b> a fórmula é heurística e precisaria ser validada contra observação de campo (por exemplo, contagens manuais e percepção dos frequentadores).</li>
+</ul>
+</section>
+
+<section>
+<h1>4. ODS e medição de impacto</h1>
+<table>
+<tr><th>ODS / META</th><th>CONTRIBUIÇÃO</th></tr>
+<tr><td><b>ODS 11.7</b>: acesso universal a espaços públicos seguros, inclusivos e acessíveis</td><td>Dados agregados de uso real por hexágono e horário para planejar cachorródromos, limpeza, iluminação e sinalização; tutores evitam horários críticos.</td></tr>
+<tr><td><b>ODS 3</b>: saúde e bem-estar (3.4 bem-estar; 3.6 prevenção de lesões)</td><td>Redução de quedas por trancos (feedback ao tutor e campanhas de "guia frouxa") e incentivo à atividade física regular de tutores e cães.</td></tr>
+<tr><td><b>ODS 11.3</b>: urbanização inclusiva e planejamento participativo</td><td>Participação passiva do cidadão na geração de dados para a gestão pública.</td></tr>
+</table>
+<h2>Indicadores de impacto propostos</h2>
+<table>
+<tr><th>INDICADOR</th><th>COMO MEDIR</th><th>META (PILOTO 6 MESES)</th></tr>
+<tr><td>% de leituras na faixa "tranco" (&gt; 8 kgf)</td><td>Telemetria agregada por zona, antes e depois das campanhas</td><td>−20%</td></tr>
+<tr><td>Quedas e mordidas reportadas nos parques</td><td>Registros da administração dos parques e da UBS/SAMU da região</td><td>Redução observável</td></tr>
+<tr><td>Zonas H3 ativas acima de k (cobertura útil)</td><td>Contagem de células públicas por hora</td><td>≥ 30 células no polo Ibirapuera</td></tr>
+<tr><td>Horários de pico atendidos pela gestão</td><td>Ações de limpeza e iluminação alinhadas ao pico detectado</td><td>2 ajustes de escala por parque</td></tr>
+<tr><td>Passeios em horário menos lotado</td><td>Mudança na distribuição horária dos usuários do app</td><td>+15% fora do pico</td></tr>
+<tr><td>Privacidade</td><td>Auditoria: 0 publicações com cluster &lt; k ou com identificador</td><td>0 incidentes</td></tr>
+</table>
+</section>
+
+<section style="break-before:auto">
+<h1>5. Conclusões</h1>
+<p>O PetPulse mostra que é possível transformar sinais físicos simples (força na guia e altura medida por barômetro, ancorada na cota do terreno) em <b>informação urbana útil e anônima</b>, sem pedir nenhuma ação manual ao cidadão. A combinação H3 + DBSCAN + k-anonymity resolveu, com um único parâmetro, dois problemas: encontrar onde os cães se concentram e garantir que nenhum indivíduo seja exposto. A POC entrega um pipeline reprodutível com 20 testes automatizados, um app 3D interativo com replay do dia, firmware ESP32 compilável e uma identidade visual coerente.</p>
+<p><b>Próximos passos:</b> (1) protótipo físico do CLIP-01 com calibração da célula de carga e do barômetro; (2) piloto com 30 a 50 tutores no polo Ibirapuera; (3) API pública de dados agregados para a prefeitura; (4) validação do Índice DBM contra observação em campo; (5) migração do banco para PostgreSQL/PostGIS em nuvem.</p>
+
+<h1 style="margin-top:22pt">6. Links da entrega</h1>
+<table>
+<tr><th>ITEM</th><th>LINK</th></tr>
+<tr><td>Repositório GitHub (privado, compartilhado com <code>fiap-tutoria</code>)</td><td><code>[COLE_AQUI_O_LINK_DO_GITHUB]</code></td></tr>
+<tr><td>Vídeo demonstrativo (YouTube, não listado, até 5 min)</td><td><code>[COLE_AQUI_O_LINK_DO_YOUTUBE]</code></td></tr>
+<tr><td>Identidade visual (Claude Design)</td><td><code>https://claude.ai/artifact/4LsunYxKxCTDWqB9A5NGGr</code></td></tr>
+<tr><td>Pasta do projeto no repositório</td><td><code>2TIAO/GLOBAL-SOLUTION-2/</code></td></tr>
+</table>
+</section>
+</body>
+</html>
