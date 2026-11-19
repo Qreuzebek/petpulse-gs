@@ -20,7 +20,7 @@
 ## 👩‍🏫 Professores:
 
 ### Tutor(a)
-- <a href="https://www.linkedin.com/">[Nome do Tutor]</a>
+- <a href="https://github.com/fiap-tutoria">Tutoria FIAP</a>
   
 ### Coordenador(a)
 - <a href="https://www.linkedin.com/in/andregodoichiovato/">André Godoi Chiovato</a>
@@ -73,7 +73,6 @@ O **PetPulse (WARNED.)** é uma prova de conceito de um "Waze canino passivo":
 
 * **[Vídeo de entrega no YouTube (não listado)](COLE_AQUI_O_LINK_DO_YOUTUBE)**: demonstração de até 5 minutos.
 * **[Repositório GitHub (privado)](https://github.com/Qreuzebek/petpulse-gs)**: compartilhado com `fiap-tutoria`.
-* **[Identidade visual (Claude Design)](https://claude.ai/artifact/4LsunYxKxCTDWqB9A5NGGr)**: brand board, HUD, CLIP-01 e capa.
 
 ### 🧠 Decisões Técnicas
 
