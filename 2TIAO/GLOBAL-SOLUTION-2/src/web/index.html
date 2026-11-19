@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PetPulse · WARNED.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-ver="B">
+<div id="map"></div>
+
+<header class="brand">
+  <svg width="26" height="26" viewBox="0 0 132 132" aria-hidden="true"><polygon points="66,6 118,36 118,96 66,126 14,96 14,36" fill="currentColor"/><polyline points="24,70 46,70 54,52 64,90 74,40 82,70 108,70" fill="none" stroke="var(--bg)" stroke-width="9" stroke-linejoin="round"/></svg>
+  <strong>WARNED.</strong>
+  <span class="mono dim">PETPULSE · TTL 15m · <span id="ago">há 1 s</span></span>
+  <span class="mono tag" id="engine">—</span>
+</header>
+
+<nav class="toolbar" aria-label="Controles do mapa">
+  <button class="on" id="b3d">3D 45° WEBGL</button>
+  <button class="on" id="bz">EIXO Z (CM): ON</button>
+  <select id="estilo" aria-label="Estilo do mapa"></select>
+  <span class="sep mono dim">CAMINHAR NO MAPA</span>
+  <button data-go="0">Ibirapuera</button>
+  <button data-go="1">Pereira Coutinho</button>
+  <button data-go="2">do Povo</button>
+  <button data-go="3">Cidade de Milão</button>
+</nav>
+
+<section class="clip" aria-label="CLIP-01 TAG 3D">
+  <div class="row mono dim"><span>WARNED. CLIP-01 · TAG 3D</span><span id="bat">14µA · 184d</span></div>
+  <div class="mono">THOR #8695 · GRANDE (61 CM) · M1:FORÇA</div>
+  <div class="big"><span id="kgf">3.4</span> <small>kgf</small></div>
+  <div class="mono dim"><span id="newton">33 N</span> · PK <span id="pk">8.6</span> · <span id="faixa">TRAÇÃO</span></div>
+  <div class="mono formula" id="zform">Z_cão = Sensor − GoogleElev(lat,lng)</div>
+  <div class="row btns">
+    <button id="bled">BTN MODO LED</button>
+    <button id="bpux">PUXADA +15KGF</button>
+    <button id="bsalto">SALTO 3D (+CM)</button>
+  </div>
+</section>
+
+<aside class="panel" id="panel" aria-live="polite">
+  <div class="badges">
+    <span>GEOFENCE ZERO-CLICK</span><span>MODO NEUTRO (SEM OPOSIÇÃO)</span>
+    <span id="badgeTracao" hidden>ALTA TRAÇÃO NAS GUIAS</span><span class="inv">TTL 15m · <span id="ago2">há 1 s</span></span>
+  </div>
+  <div id="zoneEmpty" class="empty">Toque num hexágono para ver a zona.<br><span class="mono dim">Isolados e grupos &lt; N ficam ocultos (LGPD).</span></div>
+  <div id="zone" hidden>
+    <h1 id="zNome">—</h1>
+    <p class="mono dim" id="zH3">—</p>
+    <div class="kpis">
+      <div><span class="mono dim">PETS AGORA</span><b id="zPets">—</b></div>
+      <div><span class="mono dim">H3 RES-10</span><b id="zAdj">—</b></div>
+      <div><span class="mono dim">GOOGLE ELEV</span><b id="zElev">—</b></div>
+    </div>
+
+    <h2>Clima comportamental do local</h2>
+    <p class="mono dim small">Escala contínua neutra · Sem rótulos ou contagem de grupos · EIXO X NEUTRO</p>
+    <div class="scale"><div id="zMark"></div></div>
+    <div class="row mono dim small"><span>TRANQUILA</span><span>HARMONIA COLETIVA PASSIVA</span><span>AGITADA</span></div>
+
+    <h2>Força · puxada de coleira <span class="mono dim small">CLIP-01 / LOAD CELL</span></h2>
+    <div class="kpis">
+      <div><span class="mono dim">TRAÇÃO MÉDIA</span><b id="zTr">—</b><span class="mono dim" id="zTrN"></span></div>
+      <div><span class="mono dim">PICO DE TRANCO</span><b id="zPk">—</b><span class="mono dim" id="zPkN"></span></div>
+      <div><span class="mono dim">ENERGIA 3D×FORÇA</span><b id="zDbm">—</b><span class="mono dim">/100 ÍNDICE DBM</span></div>
+    </div>
+    <div class="bars" id="zFaixas"></div>
+
+    <h2>Rastreio 3D · altura dos cães <span class="mono dim small">EIXO Z / ELEVATION</span></h2>
+    <div class="kpis">
+      <div><span class="mono dim">ESTATURA MÉDIA</span><b id="zZ">—</b></div>
+      <div><span class="mono dim">AMPLITUDE Z</span><b id="zAmp">—</b></div>
+      <div><span class="mono dim">COTA TERRENO</span><b id="zCota">—</b></div>
+    </div>
+    <div class="portes" id="zPortes"></div>
+  </div>
+  <p class="mono dim small foot">DADOS SIMULADOS · POC ACADÊMICA · FIAP GS 2026.2</p>
+</aside>
+
+<footer class="bottom">
+  <div class="seg" role="group" aria-label="Fonte">
+    <button class="on" id="mLive">AO VIVO (SIM.)</button>
+    <button id="mReplay">REPLAY DIA (PYTHON)</button>
+  </div>
+  <input type="range" id="replayT" min="0" max="64" value="48" aria-label="Hora do replay" hidden>
+  <span class="mono" id="replayLbl" hidden></span>
+  <button id="bVer">VER B · NEUTRA (MONO)</button>
+  <button id="bPause">PAUSAR</button>
+  <button id="b12">+12 PETS</button>
+  <button id="bPico">PICO 18H</button>
+  <button id="bPux2">PUXADA +15KGF</button>
+  <label class="mono slider">DBSCAN ≥ <b id="nVal">3</b>
+    <input type="range" id="nMin" min="2" max="8" value="3">
+  </label>
+  <span class="mono dim" id="stats"></span>
+</footer>
+
+<div class="foot-coords mono" id="coords">LAT/LNG — · COTA GOOGLE — · H3 —</div>
+
+<script src="config.js" onerror="window.PETPULSE_CONFIG={}"></script>
+<script src="https://unpkg.com/h3-js@4.1.0/dist/h3-js.umd.js"></script>
+<script src="https://unpkg.com/deck.gl@9.0.38/dist.min.js"></script>
+<script src="petpulse-core.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

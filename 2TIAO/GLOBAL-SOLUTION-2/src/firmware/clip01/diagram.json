@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "author": "PetPulse GS 2026.2",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-hx711", "id": "cell1", "top": -120, "left": 180, "attrs": { "type": "50kg" } },
+    { "type": "wokwi-mpu6050", "id": "imu1", "top": 140, "left": 200, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": -110, "left": -150, "attrs": {} },
+    { "type": "wokwi-pushbutton", "id": "btn1", "top": 200, "left": -150, "attrs": { "color": "black" } },
+    { "type": "wokwi-led", "id": "led1", "top": 120, "left": -120, "attrs": { "color": "white" } },
+    { "type": "wokwi-resistor", "id": "r1", "top": 160, "left": -80, "attrs": { "value": "220" } }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "cell1:VCC", "esp:3V3", "red", [] ],
+    [ "cell1:GND", "esp:GND.1", "black", [] ],
+    [ "cell1:DT", "esp:16", "green", [] ],
+    [ "cell1:SCK", "esp:4", "blue", [] ],
+    [ "imu1:VCC", "esp:3V3", "red", [] ],
+    [ "imu1:GND", "esp:GND.2", "black", [] ],
+    [ "imu1:SDA", "esp:21", "green", [] ],
+    [ "imu1:SCL", "esp:22", "blue", [] ],
+    [ "pot1:VCC", "esp:3V3", "red", [] ],
+    [ "pot1:GND", "esp:GND.1", "black", [] ],
+    [ "pot1:SIG", "esp:34", "orange", [] ],
+    [ "btn1:1.l", "esp:15", "green", [] ],
+    [ "btn1:2.l", "esp:GND.1", "black", [] ],
+    [ "led1:A", "r1:1", "white", [] ],
+    [ "r1:2", "esp:2", "white", [] ],
+    [ "led1:C", "esp:GND.2", "black", [] ]
+  ],
+  "dependencies": {}
+}

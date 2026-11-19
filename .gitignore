@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+.DS_Store
+.claude/
+# segredos
+**/src/web/config.js
+.env
+# banco gerado (reproduzível com o pipeline)
+*.db
+# build do firmware
+**/firmware/**/build/

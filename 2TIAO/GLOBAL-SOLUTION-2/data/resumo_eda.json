@@ -1,0 +1,17 @@
+{
+  "faixas_pct": {
+    "TRACAO": 45.2,
+    "FROUXA": 40.6,
+    "TRANCO": 14.2
+  },
+  "pico_hora": 18,
+  "z_mediana_por_porte": {
+    "GIGANTE": 78.3,
+    "GRANDE": 62.4,
+    "MÉDIO": 46.5,
+    "PEQUENO": 28.1
+  },
+  "leituras": 36038,
+  "caes": 600,
+  "clusters_publicos": 184
+}
