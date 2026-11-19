@@ -72,6 +72,7 @@ O **PetPulse (WARNED.)** é uma prova de conceito de um "Waze canino passivo":
 ### 🔗 Links do Projeto
 
 * **[Vídeo de entrega no YouTube (não listado)](COLE_AQUI_O_LINK_DO_YOUTUBE)**: demonstração de até 5 minutos.
+* **[Repositório GitHub (privado)](https://github.com/Qreuzebek/petpulse-gs)**: compartilhado com `fiap-tutoria`.
 * **[Identidade visual (Claude Design)](https://claude.ai/artifact/4LsunYxKxCTDWqB9A5NGGr)**: brand board, HUD, CLIP-01 e capa.
 
 ### 🧠 Decisões Técnicas
