@@ -82,6 +82,7 @@ O **PetPulse (WARNED.)** é uma prova de conceito de um "Waze canino passivo":
 > **Escala logarítmica (DBM)** evita que um parque lotado sature a régua e esconda diferenças entre zonas médias.
 > **SQLite** porque é relacional, sem servidor e reprodutível pelo avaliador. O esquema está pronto para PostgreSQL/PostGIS.
 > **Google Maps + deck.gl:** com chave, o mapa usa Google Maps vetorial + `GoogleMapsOverlay` (interleaved = WebGLOverlayView) + Elevation API. Sem chave, as **mesmas camadas** rodam em deck.gl standalone (tiles Esri/OSM), para que a demo nunca dependa de cobrança.
+> **Uso de IA:** desenvolvido com apoio de assistente de IA (Claude, da Anthropic) na escrita de código, documentação e identidade visual. As decisões de escopo, a revisão e os testes foram feitos pelo integrante.
 > **Duas implementações do núcleo** (Python e JS) com testes de paridade: o Python gera o histórico e o banco, e o JS roda a simulação ao vivo no navegador.
 
 ### 📢 Observações Gerais
