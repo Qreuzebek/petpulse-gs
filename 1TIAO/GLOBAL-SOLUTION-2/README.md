@@ -73,7 +73,7 @@ O **PetPulse (WARNED.)** é uma prova de conceito de um "Waze canino passivo":
 
 * **[Vídeo de entrega no YouTube (não listado)](https://youtu.be/l8rQs4pqZ_E)**: demonstração de até 5 minutos.
 * **[Deck executivo (PDF)](docs/PetPulse_Deck_GS2026-2.pdf)**: apresentação usada no vídeo.
-* **[Repositório GitHub (privado)](https://github.com/Qreuzebek/petpulse-gs)**: compartilhado com `fiap-tutoria`.
+* **[Repositório GitHub](https://github.com/Qreuzebek/petpulse-gs)**: público, com a conta `fiap-tutoria` como colaboradora.
 
 ### 🧠 Decisões Técnicas
 
