@@ -57,28 +57,15 @@ Organizar e versionar todo o fluxo de desenvolvimento acadêmico, garantindo:
 ## 🧠 Estrutura Macro do Repositório
 
 ```bash
-📂 FIAP-PORTFOLIO-AI
+📂 petpulse-gs
 │
 ├── 📂 1TIAO
-│   ├── 📂 ENTERPRISE-CHALLENGE
-│   ├── 📂 FASE1
-│   │   ├── 📂 CAP-X-NOME-DA-ATIVIDADE-APRESENTADA-NO-PORTAL
-│   ├── 📂 FASE2
-│   ├── 📂 FASE3
-│   ├── 📂 ...
-│   ├── 📂 GLOBAL-SOLUTION-1    
-│   └── 📂 GLOBAL-SOLUTION-2
-│
-├── 📂 2TIAO
-│   ├── 📂 ENTERPRISE-CHALLENGE
-│   ├── 📂 FASE1
-│   │   ├── 📂 CAP-X-NOME-DA-ATIVIDADE-APRESENTADA-NO-PORTAL
-│   ├── 📂 FASE2
-│   ├── 📂 FASE3
-│   ├── 📂 ...
-│   ├── 📂 GLOBAL-SOLUTION-1    
-│   └── 📂 GLOBAL-SOLUTION-2
-│
+│   └── 📂 GLOBAL-SOLUTION-2      # PetPulse (WARNED.)
+│       ├── 📂 data
+│       ├── 📂 docs
+│       ├── 📂 notebooks
+│       └── 📂 src
+├── 📂 assets
 └── README.md
 ```
 
